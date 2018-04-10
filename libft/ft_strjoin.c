@@ -16,13 +16,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
 	char	*str;
-	char *tmp;
 
 	i = (ft_strlen(s1) + ft_strlen(s2));
 	str = ft_strnew(i);
 	if (str == NULL)
 		return (NULL);
-	tmp = (char*)s1;
 	ft_strcpy(str, s1);
 	i = 0;
 	while (s1[i])
@@ -32,7 +30,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[i] = '\0';
 	ft_strcat(str, s2);
-	free(tmp);
-	//free(s2);
 	return (str);
 }

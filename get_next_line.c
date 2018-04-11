@@ -89,7 +89,7 @@ int			get_next_line(const int fd, char **line)
 	int			flag;
 
 	flag = 0;
-	if (fd < 0 || BUFF_SIZE < 0)
+	if (fd < 0 || read(fd, 0, 0) < 0 || !line)
 		return (-1);
 	if (!str[fd])
 		if (!(str[fd] = ft_memalloc(sizeof(char))))
